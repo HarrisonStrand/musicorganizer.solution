@@ -1,0 +1,8 @@
+<h1>Add a new album to @Model.ArtistName</h1>
+
+<form action="/artists/@Model.Id/albums" method="post">
+  <input id="artistId" name="artistId" type="hidden" value="@Model.Id">
+  <label for="albumName">Item Description</label>
+  <input id="albumName" name="albumName" type="text">
+  <button type='submit'>Add Album</button>
+</form>
