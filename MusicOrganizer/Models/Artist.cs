@@ -31,5 +31,16 @@ namespace MusicOrganizer.Models
     {
       Albums.Add(album);
     }
+    public static Artist FindByName(string searchName)
+    {
+      for(int i = 0; i <= _instances.Count; i++)
+      {
+        if (_instances[i].ArtistName == searchName)
+        {
+          return _instances[i]; 
+        }
+      }
+      return _instances[0];
+    }
   }
 }

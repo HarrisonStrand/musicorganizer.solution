@@ -49,5 +49,12 @@ namespace MusicOrganizer.Controllers
       model.Add("artist", foundArtist);
       return View("Show", model); 
     }
+
+    [HttpGet("/artists/search")]
+    public ActionResult Search(string searchName)
+    {
+      Artist foundArtist = Artist.FindByName(searchName);
+      return RedirectToAction("Show",foundArtist.Id); 
+    }
   }
 }
