@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace MusicOrganizer.Controllers
 {
-  public class ArtistController : Controller
+  public class ArtistsController : Controller
   { 
     [HttpGet("/artists")]
     public ActionResult Index()
@@ -32,12 +32,12 @@ namespace MusicOrganizer.Controllers
       Dictionary<string, object> model = new Dictionary<string, object>(); 
       Artist selectedArtist = Artist.Find(id);
       List<Album> artistAlbums = selectedArtist.Albums; 
-      model.Add("Artist", selectedArtist);
+      model.Add("artist", selectedArtist);
       model.Add("albums", artistAlbums);
       return View(model);
     }
 
-    [HttpGet("/artists/{artistId}/albums")]
+    [HttpPost("/artists/{artistId}/albums/")]
     public ActionResult Create(int artistId, string albumName)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();

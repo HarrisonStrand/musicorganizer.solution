@@ -7,7 +7,7 @@ namespace MusicOrganizer.Models
     public string AlbumName { get; set; }
     public int Id { get; }
     private static List<Album> _instances = new List<Album> { };
-    public Album(string albumName, int id)
+    public Album(string albumName)
     {
       AlbumName = albumName;
       _instances.Add(this);

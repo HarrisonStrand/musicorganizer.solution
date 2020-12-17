@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using MusicOrganizer.Models;
 using System.Collections.Generic;
 
 namespace MusicOrganizer.Controllers
 {
   public class AlbumsController : Controller
   {
-    [HttpGet("/artists/{artistId}/items/new")]
+    [HttpGet("/artists/{artistId}/albums/new")]
     public ActionResult New(int artistId)
     {
       Artist artist = Artist.Find(artistId);
@@ -22,6 +22,7 @@ namespace MusicOrganizer.Controllers
       model.Add("artist", artist);
       return View(model);
     }
+
     [HttpPost("/albums/delete")]
     public ActionResult DeleteAll()
     {

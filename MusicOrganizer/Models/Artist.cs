@@ -13,7 +13,7 @@ namespace MusicOrganizer.Models
       ArtistName = artistName;
       _instances.Add(this);
       Id = _instances.Count;
-      Album = new List<Album>{};
+      Albums = new List<Album>{};
     }
     public static void ClearAll()
     {
