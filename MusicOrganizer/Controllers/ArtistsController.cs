@@ -51,10 +51,27 @@ namespace MusicOrganizer.Controllers
     }
 
     [HttpGet("/artists/search")]
-    public ActionResult Search(string searchName)
+    public ActionResult Search()
     {
-      Artist foundArtist = Artist.FindByName(searchName);
-      return RedirectToAction("Show",foundArtist.Id); 
+      return View(); 
     }
+
+    [HttpGet("/artists/search/result")]
+    public ActionResult Search()
+    {
+      return View(); 
+    }
+//     public async Task<IActionResult> Index(string searchString)
+// {
+//     var movies = from m in _context.Movie
+//     select m;
+
+//     if (!String.IsNullOrEmpty(searchString))
+//     {
+//         movies = movies.Where(s => s.Title.Contains(searchString));
+//     }
+
+//     return View(await movies.ToListAsync());
+// }
   }
 }

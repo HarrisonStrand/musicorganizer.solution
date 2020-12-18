@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+@using MusicOrganizer.Models;
+
+<form action="/artist/search/result" method="post">
+  <input id="searchName" name="searchName" type="text">
+  <label for="searchName">Search By Artist:</label>
+  <button type='submit'>Search</button>
+</form>
+
+
+[HttpGet("/artists/search")]
+    public ActionResult Search()
+    {
+      return View(); 
+    }
